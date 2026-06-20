@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "sansanlabs/laravel-inertia-permissions",
+    "description": "Generate TypeScript types from Spatie Laravel Permission for Inertia.js (React & Vue)",
     "keywords": [
-        ":vendor_name",
+        "sansanlabs",
         "laravel",
-        ":package_slug"
+        "laravel-inertia-permissions"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/sansanlabs/laravel-inertia-permissions",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Edi Kurniawan",
+            "email": "edikurniawan.dev@gmail.com",
             "role": "Developer"
         }
     ],
@@ -35,13 +35,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "SanSanLabs\\InertiaPermission\\": "src/",
+            "SanSanLabs\\InertiaPermission\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/",
+            "SanSanLabs\\InertiaPermission\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
@@ -63,10 +63,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "SanSanLabs\\InertiaPermission\\InertiaPermission"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "Skeleton": "SanSanLabs\\InertiaPermission\\Facades\\Skeleton"
             }
         }
     },

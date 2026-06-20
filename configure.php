@@ -163,7 +163,7 @@ function getFilesWithPlaceholders(): array
 
     $skipDirs = ['.git', 'vendor', 'node_modules'];
     $scriptBasename = basename(__FILE__);
-    $placeholders = [':author', ':vendor', ':package', 'VendorName', 'skeleton', 'Skeleton', 'migration_table_name', 'vendor_name', 'vendor_slug', 'author@domain.com', ':variable'];
+    $placeholders = [':author', ':vendor', ':package', 'VendorName', 'skeleton', 'Skeleton', 'migration_table_name', 'vendor_name', 'vendor_slug', 'edikurniawan.dev@gmail.com', ':variable'];
 
     $files = [];
 
@@ -445,24 +445,24 @@ $files = getFilesWithPlaceholders();
 
 foreach ($files as $file) {
     replace_in_file($file, [
-        ':author_name' => $authorName,
+        'Edi Kurniawan' => $authorName,
         ':author_username' => $authorUsername,
-        'author@domain.com' => $authorEmail,
-        ':vendor_name' => $vendorName,
-        ':vendor_slug' => $vendorSlug,
+        'edikurniawan.dev@gmail.com' => $authorEmail,
+        'SanSanLabs' => $vendorName,
+        'sansanlabs' => $vendorSlug,
         'VendorName' => $vendorNamespace,
         ':package_name' => $packageName,
-        ':package_slug' => $packageSlug,
+        'laravel-inertia-permissions' => $packageSlug,
         'Skeleton' => $className,
         'skeleton' => $packageSlug,
         'migration_table_name' => title_snake($packageSlug),
         ':variable' => $variableName,
-        ':package_description' => $description,
+        'Generate TypeScript types from Spatie Laravel Permission for Inertia.js (React & Vue)' => $description,
     ]);
 
     match (true) {
         str_contains($file, normalizePath('src/Skeleton.php')) => rename($file, normalizePath('./src/'.$className.'.php')),
-        str_contains($file, normalizePath('src/SkeletonServiceProvider.php')) => rename($file, normalizePath('./src/'.$className.'ServiceProvider.php')),
+        str_contains($file, normalizePath('src/InertiaPermission.php')) => rename($file, normalizePath('./src/'.$className.'ServiceProvider.php')),
         str_contains($file, normalizePath('src/Facades/Skeleton.php')) => rename($file, normalizePath('./src/Facades/'.$className.'.php')),
         str_contains($file, normalizePath('src/Commands/SkeletonCommand.php')) => rename($file, normalizePath('./src/Commands/'.$className.'Command.php')),
         str_contains($file, normalizePath('database/migrations/create_skeleton_table.php.stub')) => rename($file, normalizePath('./database/migrations/create_'.title_snake($packageSlugWithoutPrefix).'_table.php.stub')),

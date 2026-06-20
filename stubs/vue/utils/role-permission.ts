@@ -1,0 +1,44 @@
+import { SUPER_ADMIN_ROLE } from '@/types/roles-permissions';
+import type { Permission, Role } from '@/types/roles-permissions';
+
+export function can(
+    userRoles: Set<string>,
+    userPermissions: Set<string>,
+    allowedPermission: Permission,
+): boolean {
+    if (userRoles.has(SUPER_ADMIN_ROLE)) return true;
+    return userPermissions.has(allowedPermission);
+}
+
+export function canAny(
+    userRoles: Set<string>,
+    userPermissions: Set<string>,
+    allowedPermissions: Permission[],
+): boolean {
+    if (userRoles.has(SUPER_ADMIN_ROLE)) return true;
+    return allowedPermissions.some((p) => userPermissions.has(p));
+}
+
+export function canAll(
+    userRoles: Set<string>,
+    userPermissions: Set<string>,
+    allowedPermissions: Permission[],
+): boolean {
+    if (userRoles.has(SUPER_ADMIN_ROLE)) return true;
+    return allowedPermissions.every((p) => userPermissions.has(p));
+}
+
+export function hasRole(userRoles: Set<string>, allowedRole: Role): boolean {
+    if (userRoles.has(SUPER_ADMIN_ROLE)) return true;
+    return userRoles.has(allowedRole);
+}
+
+export function hasAnyRole(userRoles: Set<string>, allowedRoles: Role[]): boolean {
+    if (userRoles.has(SUPER_ADMIN_ROLE)) return true;
+    return allowedRoles.some((r) => userRoles.has(r));
+}
+
+export function hasEveryRole(userRoles: Set<string>, allowedRoles: Role[]): boolean {
+    if (userRoles.has(SUPER_ADMIN_ROLE)) return true;
+    return allowedRoles.every((r) => userRoles.has(r));
+}
