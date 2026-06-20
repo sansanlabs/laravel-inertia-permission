@@ -63,7 +63,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "SanSanLabs\\InertiaPermission\\InertiaPermission"
+                "SanSanLabs\\InertiaPermission\\InertiaPermissionServiceProvider"
             ],
             "aliases": {
                 "InertiaPermission": "SanSanLabs\\InertiaPermission\\Facades\\InertiaPermission"
