@@ -16,8 +16,8 @@ class InertiaPermissionServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('laravel-inertia-permissions')
-            ->hasConfigFile('inertia-permissions')
+            ->name('laravel-inertia-permission')
+            ->hasConfigFile('inertia-permission')
             ->hasCommand(GeneratePermissionTypesCommand::class);
     }
 
@@ -26,11 +26,11 @@ class InertiaPermissionServiceProvider extends PackageServiceProvider
         // Publish stubs react
         $this->publishes([
             __DIR__.'/../stubs/react' => resource_path('js'),
-        ], 'inertia-permissions-stubs-react');
+        ], 'inertia-permission-stubs-react');
 
         // Publish stubs vue
         $this->publishes([
             __DIR__.'/../stubs/vue' => resource_path('js'),
-        ], 'inertia-permissions-stubs-vue');
+        ], 'inertia-permission-stubs-vue');
     }
 }

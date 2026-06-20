@@ -1,12 +1,12 @@
 {
-    "name": "sansanlabs/laravel-inertia-permissions",
+    "name": "sansanlabs/laravel-inertia-permission",
     "description": "Generate TypeScript types from Spatie Laravel Permission for Inertia.js (React & Vue)",
     "keywords": [
         "sansanlabs",
         "laravel",
-        "laravel-inertia-permissions"
+        "laravel-inertia-permission"
     ],
-    "homepage": "https://github.com/sansanlabs/laravel-inertia-permissions",
+    "homepage": "https://github.com/sansanlabs/laravel-inertia-permission",
     "license": "MIT",
     "authors": [
         {

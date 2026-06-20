@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 
 class GeneratePermissionTypesCommand extends Command
 {
-    protected $signature = 'inertia-permissions:generate
+    protected $signature = 'inertia-permission:generate
                             {--framework= : Frontend framework to generate stubs for (react/vue)}
                             {--with-stubs : Also publish utils and hook/composable stubs}
                             {--force : Overwrite existing stubs}';
@@ -17,8 +17,8 @@ class GeneratePermissionTypesCommand extends Command
     {
         $this->info('Generating permission types...');
 
-        $roleModel = config('inertia-permissions.role_model');
-        $permissionModel = config('inertia-permissions.permission_model');
+        $roleModel = config('inertia-permission.role_model');
+        $permissionModel = config('inertia-permission.permission_model');
 
         if (! class_exists($roleModel)) {
             $this->error("Role model [{$roleModel}] not found.");
@@ -55,7 +55,7 @@ class GeneratePermissionTypesCommand extends Command
 
     private function generateTypes($roles, $permissions): void
     {
-        $superAdminRole = config('inertia-permissions.super_admin_role', 'Super Admin');
+        $superAdminRole = config('inertia-permission.super_admin_role', 'Super Admin');
 
         $roleTypes = $roles->isEmpty()
             ? '    never'
@@ -67,7 +67,7 @@ class GeneratePermissionTypesCommand extends Command
 
         $content = <<<TS
         // ⚠️ AUTO-GENERATED — do not edit manually!
-        // Run: php artisan inertia-permissions:generate
+        // Run: php artisan inertia-permission:generate
 
         export type Role =
         {$roleTypes};
@@ -82,7 +82,7 @@ class GeneratePermissionTypesCommand extends Command
             ->map(fn ($line) => ltrim($line))
             ->join("\n");
 
-        $outputPath = config('inertia-permissions.output_path');
+        $outputPath = config('inertia-permission.output_path');
 
         if (! is_dir(dirname($outputPath))) {
             mkdir(dirname($outputPath), 0755, true);
@@ -96,7 +96,7 @@ class GeneratePermissionTypesCommand extends Command
     private function publishStubs(): void
     {
         $framework = $this->option('framework')
-            ?? config('inertia-permissions.framework', 'react');
+            ?? config('inertia-permission.framework', 'react');
 
         if (! in_array($framework, ['react', 'vue'])) {
             $this->error("Framework [{$framework}] not supported. Use 'react' or 'vue'.");
@@ -104,7 +104,7 @@ class GeneratePermissionTypesCommand extends Command
             return;
         }
 
-        $stubs = config("inertia-permissions.stubs.{$framework}");
+        $stubs = config("inertia-permission.stubs.{$framework}");
         $stubsPath = __DIR__."/../../stubs/{$framework}";
         $force = $this->option('force');
 

@@ -446,13 +446,13 @@ $files = getFilesWithPlaceholders();
 foreach ($files as $file) {
     replace_in_file($file, [
         'Edi Kurniawan' => $authorName,
-        ':author_username' => $authorUsername,
+        'edikurniawan-dev' => $authorUsername,
         'edikurniawan.dev@gmail.com' => $authorEmail,
         'SanSanLabs' => $vendorName,
         'sansanlabs' => $vendorSlug,
         'VendorName' => $vendorNamespace,
         ':package_name' => $packageName,
-        'laravel-inertia-permissions' => $packageSlug,
+        'laravel-inertia-permission' => $packageSlug,
         'Skeleton' => $className,
         'skeleton' => $packageSlug,
         'migration_table_name' => title_snake($packageSlug),

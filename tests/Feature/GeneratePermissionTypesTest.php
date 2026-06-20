@@ -13,9 +13,9 @@ it('generates typescript types from database', function () {
     Permission::create(['name' => 'edit-user', 'guard_name' => 'web']);
     Permission::create(['name' => 'view-user', 'guard_name' => 'web']);
 
-    $this->artisan('inertia-permissions:generate')->assertSuccessful();
+    $this->artisan('inertia-permission:generate')->assertSuccessful();
 
-    $path = config('inertia-permissions.output_path');
+    $path = config('inertia-permission.output_path');
     $content = file_get_contents($path);
 
     expect($content)
@@ -27,7 +27,7 @@ it('generates typescript types from database', function () {
 });
 
 it('fails gracefully when no roles or permissions exist', function () {
-    $this->artisan('inertia-permissions:generate')
+    $this->artisan('inertia-permission:generate')
         ->assertFailed()
         ->expectsOutput('No roles or permissions found in database.');
 });

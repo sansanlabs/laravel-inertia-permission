@@ -1,9 +1,9 @@
 # Generate TypeScript types from Spatie Laravel Permission for Inertia.js (React & Vue)
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/sansanlabs/laravel-inertia-permissions.svg?style=flat-square)](https://packagist.org/packages/sansanlabs/laravel-inertia-permissions)
-[![GitHub Tests Action Status](https://github.com/spatie/package-skeleton-laravel/actions/workflows/run-tests.yml/badge.svg)](https://github.com/sansanlabs/laravel-inertia-permissions/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://github.com/spatie/package-skeleton-laravel/actions/workflows/fix-php-code-style-issues.yml/badge.svg)](https://github.com/sansanlabs/laravel-inertia-permissions/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/sansanlabs/laravel-inertia-permissions.svg?style=flat-square)](https://packagist.org/packages/sansanlabs/laravel-inertia-permissions)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/sansanlabs/laravel-inertia-permission.svg?style=flat-square)](https://packagist.org/packages/sansanlabs/laravel-inertia-permission)
+[![GitHub Tests Action Status](https://github.com/spatie/package-skeleton-laravel/actions/workflows/run-tests.yml/badge.svg)](https://github.com/sansanlabs/laravel-inertia-permission/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://github.com/spatie/package-skeleton-laravel/actions/workflows/fix-php-code-style-issues.yml/badge.svg)](https://github.com/sansanlabs/laravel-inertia-permission/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/sansanlabs/laravel-inertia-permission.svg?style=flat-square)](https://packagist.org/packages/sansanlabs/laravel-inertia-permission)
 <!--delete-->
 ---
 This repo can be used to scaffold a Laravel package. Follow these steps to get started:
@@ -29,20 +29,20 @@ We highly appreciate you sending us a postcard from your hometown, mentioning wh
 You can install the package via composer:
 
 ```bash
-composer require sansanlabs/laravel-inertia-permissions
+composer require sansanlabs/laravel-inertia-permission
 ```
 
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-inertia-permissions-migrations"
+php artisan vendor:publish --tag="laravel-inertia-permission-migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-inertia-permissions-config"
+php artisan vendor:publish --tag="laravel-inertia-permission-config"
 ```
 
 This is the contents of the published config file:
@@ -55,7 +55,7 @@ return [
 Optionally, you can publish the views using
 
 ```bash
-php artisan vendor:publish --tag="laravel-inertia-permissions-views"
+php artisan vendor:publish --tag="laravel-inertia-permission-views"
 ```
 
 ## Usage
