@@ -1,11 +1,10 @@
-import { SUPER_ADMIN_ROLE } from '@/types/roles-permissions';
-import type { Permission, Role } from '@/types/roles-permissions';
+// ⚠️ AUTO-GENERATED !
+// Run: php artisan inertia-permission:generate --with-stubs
 
-export function can(
-    userRoles: Set<string>,
-    userPermissions: Set<string>,
-    allowedPermission: Permission,
-): boolean {
+import type { Permission, Role } from '@/types/roles-permissions';
+import { SUPER_ADMIN_ROLE } from '@/types/roles-permissions';
+
+export function can(userRoles: Set<string>, userPermissions: Set<string>, allowedPermission: Permission): boolean {
     if (userRoles.has(SUPER_ADMIN_ROLE)) return true;
     return userPermissions.has(allowedPermission);
 }
