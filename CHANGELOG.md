@@ -2,6 +2,10 @@
 
 All notable changes to `inerita-laravel-permission` will be documented in this file.
 
+## v0.0.4 - 2026-06-20
+
+**Full Changelog**: https://github.com/sansanlabs/laravel-inertia-permission/compare/v0.0.3...v0.0.4
+
 ## v0.0.3 - 2026-06-20
 
 **Full Changelog**: https://github.com/sansanlabs/laravel-inertia-permission/compare/v0.0.2...v0.0.3
