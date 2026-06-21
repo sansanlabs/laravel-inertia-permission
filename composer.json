@@ -64,10 +64,7 @@
         "laravel": {
             "providers": [
                 "SanSanLabs\\InertiaPermission\\InertiaPermissionServiceProvider"
-            ],
-            "aliases": {
-                "InertiaPermission": "SanSanLabs\\InertiaPermission\\Facades\\InertiaPermission"
-            }
+            ]
         }
     },
     "minimum-stability": "dev",

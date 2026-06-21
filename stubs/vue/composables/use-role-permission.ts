@@ -15,9 +15,12 @@ export function useRolePermission() {
     const permissionSet = computed(() => new Set<string>(page.props.permissions as string[]));
 
     return {
+        // Permission checks
         can: (permission: Permission) => can(roleSet.value, permissionSet.value, permission),
         canAny: (permissions: Permission[]) => canAny(roleSet.value, permissionSet.value, permissions),
         canAll: (permissions: Permission[]) => canAll(roleSet.value, permissionSet.value, permissions),
+
+        // Role checks
         hasRole: (role: Role) => hasRole(roleSet.value, role),
         hasAnyRole: (roles: Role[]) => hasAnyRole(roleSet.value, roles),
         hasEveryRole: (roles: Role[]) => hasEveryRole(roleSet.value, roles),

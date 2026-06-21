@@ -445,19 +445,19 @@ $files = getFilesWithPlaceholders();
 
 foreach ($files as $file) {
     replace_in_file($file, [
-        'Edi Kurniawan' => $authorName,
-        'edikurniawan-dev' => $authorUsername,
-        'edikurniawan.dev@gmail.com' => $authorEmail,
-        'SanSanLabs' => $vendorName,
-        'sansanlabs' => $vendorSlug,
+        ':author_name' => $authorName,
+        ':author_username' => $authorUsername,
+        'author@domain.com' => $authorEmail,
+        ':vendor_name' => $vendorName,
+        ':vendor_slug' => $vendorSlug,
         'VendorName' => $vendorNamespace,
         ':package_name' => $packageName,
-        'laravel-inertia-permission' => $packageSlug,
+        ':package_slug' => $packageSlug,
         'Skeleton' => $className,
         'skeleton' => $packageSlug,
         'migration_table_name' => title_snake($packageSlug),
         ':variable' => $variableName,
-        'Generate TypeScript types from Spatie Laravel Permission for Inertia.js (React & Vue)' => $description,
+        ':package_description' => $description,
     ]);
 
     match (true) {

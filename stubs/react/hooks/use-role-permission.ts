@@ -21,9 +21,12 @@ export function useRolePermission() {
     const permissionSet = useMemo(() => new Set<string>(permissions), [permissions]);
 
     return {
+        // Permission checks
         can: (permission: Permission) => can(roleSet, permissionSet, permission),
         canAny: (permissions: Permission[]) => canAny(roleSet, permissionSet, permissions),
         canAll: (permissions: Permission[]) => canAll(roleSet, permissionSet, permissions),
+
+        // Role checks
         hasRole: (role: Role) => hasRole(roleSet, role),
         hasAnyRole: (roles: Role[]) => hasAnyRole(roleSet, roles),
         hasEveryRole: (roles: Role[]) => hasEveryRole(roleSet, roles),

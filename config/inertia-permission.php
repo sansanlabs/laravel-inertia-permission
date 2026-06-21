@@ -3,7 +3,6 @@
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
-// config for VendorName/Skeleton
 return [
     /*
      * The model used for roles.
