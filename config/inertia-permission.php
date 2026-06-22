@@ -5,37 +5,60 @@ use Spatie\Permission\Models\Role;
 
 return [
     /*
-     * The model used for roles.
-     * Change this if you use a custom Role model.
-     */
+    |--------------------------------------------------------------------------
+    | Role Model
+    |--------------------------------------------------------------------------
+    | The model used for roles. Change this if you use a custom Role model.
+    |
+    */
     'role_model' => Role::class,
 
     /*
-     * The model used for permissions.
-     * Change this if you use a custom Permission model.
-     */
+    |--------------------------------------------------------------------------
+    | Permission Model
+    |--------------------------------------------------------------------------
+    | The model used for permissions. Change this if you use a custom
+    | Permission model.
+    |
+    */
     'permission_model' => Permission::class,
 
     /*
-     * The role name that bypasses all permission checks.
-     */
+    |--------------------------------------------------------------------------
+    | Super Admin Role
+    |--------------------------------------------------------------------------
+    | The role name that bypasses all permission checks.
+    |
+    */
     'super_admin_role' => 'Super Admin',
 
     /*
-     * The frontend framework to generate stubs for.
-     * Supported: "react", "vue"
-     */
+    |--------------------------------------------------------------------------
+    | Frontend Framework
+    |--------------------------------------------------------------------------
+    | The frontend framework to generate stubs for.
+    | Supported: "react", "vue"
+    |
+    */
     'framework' => 'react',
 
     /*
-     * Output path for the generated TypeScript types file.
-     */
+    |--------------------------------------------------------------------------
+    | TypeScript Output Path
+    |--------------------------------------------------------------------------
+    | Output path for the generated TypeScript types file.
+    |
+    */
     'output_path' => resource_path('js/types/roles-permissions.ts'),
 
     /*
-     * Output path for the generated utils stub.
-     * Supported placeholders: {framework}
-     */
+    |--------------------------------------------------------------------------
+    | Stub Output Paths
+    |--------------------------------------------------------------------------
+    | Output paths for the generated framework stubs.
+    | Supported placeholders: {framework}
+    |
+    */
     'stubs' => [
         'react' => [
             'utils' => resource_path('js/utils/role-permission.ts'),
